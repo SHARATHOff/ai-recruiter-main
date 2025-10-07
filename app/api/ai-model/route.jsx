@@ -17,10 +17,10 @@ export async function POST(req) {
     console.log("FINAL_PROMPT:", FINAL_PROMPT);
 
     // Initialize Gemini with API key
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "AIzaSyBP86CuuII_3sW_0kqHmDHFTMAUter2WoM");
 
     // Choose model
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // Generate content
     const result = await model.generateContent(FINAL_PROMPT);
